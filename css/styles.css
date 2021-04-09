@@ -1,0 +1,792 @@
+/*
+
+To do:
+FORM STATES!!!!!!
+hover and active styles for all anchors!!!
+
+*/
+
+/* General Styles */
+
+:root {
+    --gold: #d2be98;
+    --blue: #344256;
+    --lt-grey: #eaedef;
+    --dk-blue: #1a212b;
+    --dk-purple: #220728;
+}
+
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--dk-blue);
+}
+
+main {
+    line-height: 1.25;
+}
+
+p {
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+.fa-bars,
+.bottom-nav h2 {
+    font-size: calc((22/16) * 1rem);
+}
+
+h1,
+.bottom-nav h2 {
+    color: var(--gold);
+}
+
+h2 {
+    font-size: calc((36/16) * 1rem);
+    margin-bottom: 10px;
+    color: var(--blue);
+}
+
+h3 {
+    font-weight: bold;
+    color: var(--blue);
+    font-size: calc((20/16) * 1rem);
+}
+
+h1,
+h2,
+nav,
+.bottom-nav h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.hide {
+    display: none;
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+input[type=text]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+header,
+main > div {
+    background-color: #fff;
+}
+
+
+main > div:nth-of-type(2),
+main > div:nth-of-type(4),
+footer {
+    background-color: var(--blue);
+}
+
+main section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+input::placeholder,
+input::-webkit-input-placeholder,
+textarea::placeholder,
+textarea::-webkit-input-placeholder {
+    color: #d3d3d3;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+}
+
+/* Header Styles */
+
+header {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 3px 6px var(--lt-grey);
+    padding-top: 12px;
+    padding-bottom: 9px;
+    z-index: 1000;
+}
+
+header > div > div:first-of-type,
+header div > div a:first-of-type {
+    display: flex;
+    align-items: center;
+}
+
+header > div > div:first-of-type {
+    justify-content: space-between;
+    position: relative;
+}
+
+header div > div a:first-of-type {
+    color: var(--gold);
+    fill: var(--gold);
+}
+
+header svg {
+    height: 46px;
+    margin-right: 5px;
+}
+
+header > div > div > a > div {
+    background-color: var(--gold);
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.menu-btn {
+    color: #000;
+}
+
+/* Navigation Styles */
+
+nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0 50px 0;
+    background-color: #fff;
+    /*
+    -webkit-box-shadow: 0px -7px 13px -3px var(--lt-grey); 
+    box-shadow: 0px -7px 13px -3px var(--lt-grey);
+    */
+}
+
+nav li {
+    padding: 0 24px;
+    margin: 0;
+    border-top: 1px solid #d3d3d3;
+    font-size: calc((30/16)*1rem);
+    line-height: 1.5;
+}
+
+nav li:last-of-type {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+nav a {
+    color: var(--blue);
+}
+
+input {
+    border: 0;
+    outline: 0;
+}
+
+input:focus:required:invalid,
+input:focus:invalid {
+    border: 1px solid red;
+}
+
+input:required:valid {
+    background-image: url(../img/checkmark.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+button:hover,
+input[type=submit] {
+    cursor: pointer;
+}
+
+/* Home Page First Section */
+
+.search-help form {
+    display: flex;
+}
+
+.search-help input {
+    border: 1px solid var(--blue);
+    border-radius: 10px 0 0 10px;
+    padding: 12px;
+    width: 100%;
+}
+
+.search-help button {
+    background-color: var(--blue);
+    border-radius: 0 10px 10px 0;
+    color: #fff;
+    border: 1px solid var(--blue);
+}
+
+.fa-search {
+    font-size: calc((22/16) * 1rem);
+    padding-right: 4px;
+}
+
+/* Home Page Second Section */
+
+.network,
+.network h2 {
+    color: #fff;
+}
+
+.network > div,
+.network > div:last-of-type {
+    display: flex;
+    flex-direction: column;
+}
+
+.network > div > a {
+    margin: 24px 0;
+}
+
+/* Styliing for all gold buttons */
+
+.gold-button {
+    font-family: 'Poppins', sans-serif;
+    color: var(--blue);
+    fill: var(--blue);
+    background-color: var(--gold);
+    font-size: calc((18/16)*1rem);
+    padding: 15px 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    outline: 0;
+    border: 0;
+    flex-basis: auto;
+}
+
+.fa-angle-right {
+    font-size: calc((27/16) * 1rem);
+    margin-right: 5px;
+}
+
+.network > div:last-of-type > div {
+    padding: 24px 12px;
+    background-color: #fff;
+}
+
+.network > div:last-of-type > div a {
+    font-weight: bold;
+    border-bottom: 2px solid var(--gold);
+    color: var(--blue);
+}
+
+.network > div:last-of-type > div p {
+    margin: 16px 0 30px 0;
+    color: var(--dk-blue);
+}
+
+.network svg {
+    margin-bottom: 15px;
+    height: 64px;
+}
+
+.network > div:last-of-type > div:first-of-type {
+    border-radius: 10px 10px 0 0;
+    padding-top: 48px;
+}
+
+
+.network > div:last-of-type > div:last-of-type {
+    border-radius: 0 0 10px 10px;
+    padding-bottom: 50px;
+}
+
+/* SVG lines in "black" */
+.network > div:last-of-type > div:nth-of-type(1) svg line,
+.network > div:last-of-type > div:nth-of-type(1) svg polygon,
+.network > div:last-of-type > div:nth-of-type(2) svg line,
+.network > div:last-of-type > div:nth-of-type(3) svg path,
+.network > div:last-of-type > div:nth-of-type(3) svg line,
+.network > div:last-of-type > div:nth-of-type(3) svg polyline,
+.network > div:last-of-type > div:nth-of-type(4) svg path,
+.network > div:last-of-type > div:nth-of-type(4) svg circle,
+.network > div:last-of-type > div:nth-of-type(4) svg line {
+    stroke: var(--dk-purple);
+}
+
+/* SVG lines in gold */
+.network > div:last-of-type > div:nth-of-type(1) svg path,
+.network > div:last-of-type > div:nth-of-type(2) svg line:nth-of-type(3),
+.network > div:last-of-type > div:nth-of-type(2) svg line:nth-of-type(4),
+.network > div:last-of-type > div:nth-of-type(2) svg line:nth-of-type(5),
+.network > div:last-of-type > div:nth-of-type(2) polygon,
+.network > div:last-of-type > div:nth-of-type(3) svg circle,
+.network > div:last-of-type > div:nth-of-type(4) svg path:nth-of-type(5),
+.network > div:last-of-type > div:nth-of-type(4) svg line:nth-of-type(1),
+.network > div:last-of-type > div:nth-of-type(4) svg line:nth-of-type(2) {
+    stroke: var(--gold);
+}
+
+/* Home Page Third Section */
+
+.horizontal-scroll {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: scroll;
+    height: 260px;
+    /* firefox only */
+    scrollbar-width: none;
+    margin-top: 10px;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    display: none
+}
+
+.horizontal-scroll div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.horizontal-scroll p {
+    font-weight: bold;
+    width: 70px;
+    line-height: 1.25;
+    margin: 5px 40px 0 12px;
+}
+
+/* Home Page Fourth Section */
+
+main > div:nth-of-type(4) {
+    background-color: var(--lt-grey);
+}
+
+main div:nth-of-type(4) > section {
+    display: flex;
+    flex-direction: column;
+}
+
+
+main div:nth-of-type(4) > section > div > p:first-of-type {
+    margin: 16px 0 24px 0;
+}
+
+main div:nth-of-type(4) > section > div > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 48px;
+}
+
+main div:nth-of-type(4) > section > div > div > div:last-of-type {
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px var(--lt-grey);
+    padding: 24px 12px;
+}
+
+main div:nth-of-type(4) > section > div > div > div:last-of-type h3 {
+    margin-bottom: 10px;
+}
+
+main div:nth-of-type(4) > section > div > div > div:first-of-type {
+    height: 90px;
+    border-radius: 10px 10px 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main div:nth-of-type(4) > section > div:last-of-type > div:nth-of-type(1) > div:first-of-type {
+    background-image: url(../img/solutions-sm.jpg);
+}
+
+main div:nth-of-type(4) > section > div:last-of-type > div:nth-of-type(2) > div:first-of-type {
+    background-image: url(../img/resources-sm.jpg);
+}
+
+main div:nth-of-type(4) > section > div:last-of-type > div:nth-of-type(3) > div:first-of-type {
+    background-image: url(../img/support-sm.jpg);
+}
+
+/* Home Page Fifth Section */
+
+main > div:nth-of-type(5) {
+    background-color: var(--blue);
+}
+
+main div:nth-of-type(5) > section > h2,
+main div:nth-of-type(5) > section > p {
+    color: #fff;
+}
+
+main div:nth-of-type(5) > section > p {
+    margin: 18px 0;
+}
+
+main div:nth-of-type(5) > section form {
+    display: flex;
+}
+
+main div:nth-of-type(5) > section input:first-of-type {
+    border: 1px solid var(--blue);
+    border-radius: 10px 0 0 10px;
+    padding: 12px;
+    width: 100%;
+}
+
+main div:nth-of-type(5) > section input:last-of-type {
+    background-color: #fff;
+    border: 1px solid var(--blue);
+    border-radius: 0 10px 10px 0;
+}
+
+/* Bottom Nav */
+
+.bottom-nav {
+    padding-top: 48px;
+    padding-bottom: 55px;
+    line-height: 2.25;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-nav > div:last-of-type > ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-nav > div > a {
+    display: flex;
+    align-items: center;
+}
+
+.bottom-nav > div:last-of-type > ul a {
+    color: var(--dk-blue);
+}
+
+.bottom-nav svg {
+    height: 50px;
+    fill: var(--gold);
+    margin-right: 5px;
+}
+
+.bottom-nav > div > ul h3 {
+    margin: 15px 0 10px;
+}
+
+.bottom-nav > div > ul li:last-of-type span {
+    border-bottom: 2px solid #f3d900;
+}
+
+footer {
+    color: white;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+footer p {
+    line-height: 2;
+}
+
+/* How It Works First Section */
+.how ul li {
+    line-height: 1.5;
+}
+
+.how h3 {
+    margin-bottom: 18px;
+}
+
+.how > ul > li > ul > li:last-of-type {
+    margin-bottom: 50px;
+}
+
+/* How It Works Project Form Section */
+
+.project-form {
+    color: #fff;
+}
+
+.project-form h2,
+.how h2 {
+    color: var(--blue);
+}
+
+.project-form > div:last-of-type {
+    background-color: var(--blue);
+    padding-top: 30px;
+    padding-bottom: 48px;
+}
+
+.project-form > div:first-of-type {
+    background-image: url(../img/form-bg-sm.jpg);
+    background-position: bottom center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 90px 30px 90px 0;
+}
+
+.project-form div:last-of-type p {
+    padding-bottom: 30px;
+}
+
+.project-form form,
+.project-form form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-form form div {
+    margin-bottom: 30px;
+}
+
+.project-form form label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.project-form form input,
+.project-form form select,
+.project-form form textarea {
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.project-form form textarea {
+    height: 350px;
+}
+
+.project-form form div:nth-of-type(1) label::after,
+.project-form form div:nth-of-type(2) label::after,
+.project-form form div:nth-of-type(3) label::after {
+    content: "*";
+    margin-left: 5px;
+    color: red;
+}
+
+.project-form form button {
+    margin-top: 24px;
+}
+
+/* 750px - 1159px styling */
+@media (min-width: 750px) {
+
+    h2 {
+        font-size: calc((48/16) * 1rem);
+    }
+
+    .network {
+        padding-bottom: 24px;
+    }
+
+    .network > div:last-of-type {
+        background-color: var(--blue);
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .network > div:last-of-type > div {
+        background-color: #fff;
+        border-radius: 10px;
+        flex-shrink: 0;
+        flex-basis: 48.5%;
+        margin-bottom: 24px;
+    }
+
+    .network > div:last-of-type > div:first-of-type,
+    .network > div:last-of-type > div:last-of-type {
+        border-radius: 10px;
+    }
+
+    .network > div:last-of-type > div:first-of-type {
+        padding-top: 24px;
+    }
+
+    main div:nth-of-type(4) > section > div:not(.desc) > div {
+        display: flex;
+        flex-direction: row;
+    }
+
+    main div:nth-of-type(4) > section > div > div > div:first-of-type {
+        height: 225px;
+        background-position: center;
+        border-radius: 10px 0 0 10px;
+    }
+
+    main div:nth-of-type(4) > section > div > div > div:last-of-type {
+        border-radius: 0 10px 10px 0;
+        padding: 50px 20px;
+    }
+
+    main div:nth-of-type(4) > section > div > div > div {
+        flex-basis: 370px;
+        flex-grow: 1;
+    }
+
+    main div:nth-of-type(4) > section > div:last-of-type > div:nth-of-type(1) > div:first-of-type {
+        background-image: url(../img/solutions-lg.jpg);
+    }
+
+    main div:nth-of-type(4) > section > div:last-of-type > div:nth-of-type(2) > div:first-of-type {
+        background-image: url(../img/resources-lg.jpg);
+    }
+
+    main div:nth-of-type(4) > section > div:last-of-type > div:nth-of-type(3) > div:first-of-type {
+        background-image: url(../img/support-lg.jpg);
+    }
+
+    .bottom-nav > div:last-of-type > ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .bottom-nav > div > ul {
+        padding-right: 54px;
+    }
+
+    .how {
+        padding-bottom: 30px;
+    }
+
+    .how > ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .how ul li {
+        flex-basis: 50%;
+        padding-right: 55px;
+    }
+
+    .project-form > div:first-of-type {
+        padding: 95px 30px 95px 0;
+    }
+
+    .project-form form {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .project-form form div {
+        flex-basis: 50%;
+    }
+
+    .project-form form div:nth-of-type(2n) {
+        padding-left: 24px;
+    }
+
+    .project-form form div:last-of-type {
+        flex-basis: 100%;
+        padding-left: 0;
+    }
+
+    .project-form > div:first-of-type {
+        background-image: url(../img/form-bg-md.jpg);
+    }
+}
+
+@media (min-width: 1160px) {
+
+    .menu-btn {
+        display: none;
+    }
+
+    .hide {
+        display: block;
+    }
+
+    header > div,
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav {
+        position: static;
+        padding: 0;
+    }
+
+    nav a {
+        font-size: calc((18/16) * 1rem);
+    }
+
+    nav li,
+    nav li:last-of-type {
+        border: 0;
+        padding: 0;
+        margin-left: 24px;
+    }
+
+    .search-help h2 {
+        margin-bottom: 30px;
+    }
+
+    .search-help input {
+        flex-grow: 0;
+    }
+
+    .search-help input {
+        width: 530px;
+    }
+
+    main div:nth-of-type(5) > section input:first-of-type {
+        width: 500px;
+    }
+
+    main div:nth-of-type(4) > section > div:not(.desc) > div {
+        flex-direction: column;
+        flex-basis: 370px;
+        flex-grow: 0;
+    }
+
+    main div:nth-of-type(4) > section > div:not(.desc) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* I have no idea why I have to apply max-height, but applying height/max-height: auto does not work */
+    main div:nth-of-type(4) > section > div:not(.desc) > div > div:first-of-type {
+        border-radius: 10px 10px 0 0;
+        max-height: 225px;
+    }
+
+    main div:nth-of-type(4) > section > div:not(.desc) > div > div:last-of-type {
+        border-radius: 0 0 10px 10px;
+        padding: 24px;
+        max-height: 165px;
+    }
+
+    .how ul {
+        flex-wrap: nowrap;
+    }
+
+    .how ul li {
+        flex-basis: auto;
+    }
+
+    .how ul > li > ul > li {
+        padding-right: 0;
+    }
+    
+    .project-form > div:first-of-type {
+        background-image: url(../img/form-bg-lg.jpg);
+    }
+    
+    nav a:hover {
+        border-bottom: 2px solid #f3d900;
+    }
+
+}
